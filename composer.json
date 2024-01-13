@@ -13,6 +13,7 @@
             "CG\\FVSS\\": "src/"
         }
     },
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Refkinscallv",
