@@ -8,8 +8,6 @@
             $status     = true;
             $message    = null;
 
-            $lang_msg   = $this->_lang($this->lang_set);
-
             foreach($data as $key => $val){
                 $value  = $val["value"];
 
