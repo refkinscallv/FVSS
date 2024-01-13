@@ -19,5 +19,11 @@
             "name": "Refkinscallv",
             "email": "refkisncallv@gmail.com"
         }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/refkinscallv/fvss"
+        }
     ]
 }
