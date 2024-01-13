@@ -1,0 +1,22 @@
+{
+    "name": "cg/fvss",
+    "description": "PHP Form Validation Server Side",
+    "type": "library",
+    "require": {
+        "php": ">=7.0.0",
+        "ext-ctype": "*",
+        "ext-filter": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CG\\FVSS\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Refkinscallv",
+            "email": "refkisncallv@gmail.com"
+        }
+    ]
+}
