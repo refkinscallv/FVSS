@@ -1,5 +1,5 @@
 {
-    "name": "cg/fvss",
+    "name": "refkinscallv/fvss",
     "description": "PHP Form Validation Server Side",
     "type": "library",
     "require": {
