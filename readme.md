@@ -38,7 +38,7 @@ composer require refkinscallv/fvss
 use CG\FVSS\Fvss;
 
 // Load composer autoloader
-require "path/to/folder/Fvss.php";
+require "vendor/autoload.php";
 
 /**
  * How To Use
