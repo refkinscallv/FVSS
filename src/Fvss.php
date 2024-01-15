@@ -11,33 +11,21 @@
             foreach($data as $key => $val){
                 $value  = $val["value"];
 
-                /**
-                 * Length validation
-                 */
                 if(isset($val["length"]) && $val["length"] && !empty($val["length"])){
                     if(strlen($val["value"]) < $val["length"]){
                         $status     = false;
                         $message    = (isset($val["label"]) ? $val["label"] : ucwords($value)) . " must be at least ". $val["length"] ." characters long";
                     }
                 }
-
-                /**
-                 * Allow Space or White Space
-                 */
+                
                 if(isset($val["space"]) && $val["space"] && !empty($val["space"])){
                     $value  = preg_replace("/[ \t\n\f]+/", "", $value);
                 }
-
-                /**
-                 * Allow Punctuation
-                 */
+                
                 if(isset($val["punct"]) && $val["punct"] && !empty($val["punct"])){
                     $value  = preg_replace("#[[:punct:]]#", "", $value);
                 }
-
-                /**
-                 * Check by set rules
-                 */
+                
                 $set_rules  = explode("-", $val["type"]);
                 foreach($set_rules as $rkey => $rval){
                     switch($rval){
@@ -80,10 +68,7 @@
                     }
                 }
             }
-
-            /**
-             * Output
-             */
+            
             return (object) [
                 "status"    => $status,
                 "message"   => $message
