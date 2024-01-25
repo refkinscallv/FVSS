@@ -17,9 +17,9 @@ FVSS (Form Validation Server-Side) is a PHP library designed to streamline and s
   - `domain` (Domain Format)
   
 - **Additional Parameters:**
-  - `space`: Allowing or disallowing spaces in the input.
+  - `space`: Allowing or disallowing spaces in the values.
   - `length`: Specifying the minimum length for certain types of validation.
-  - `punct`: Allowing or disallowing punctuation marks in the input.
+  - `punct`: Allowing or disallowing punctuation marks in the values.
 
 ## Installation
 
