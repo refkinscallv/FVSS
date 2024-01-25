@@ -5,12 +5,16 @@ FVSS (Form Validation Server-Side) is a PHP library designed to streamline and s
 ## Features
 
 - **Validation Types:**
-  - `alphanum` (Alphabet & Numeric)
-  - `alpha`
-  - `num`
-  - `date`
-  - `email`
-  - `url`
+  - `alphanum` (Alphabet & Numeric Format)
+  - `alpha` (Alphabet Format)
+  - `num` (Numeric Format)
+  - `date` (Date Format)
+  - `datetime` (Date & Time Format)
+  - `datetimelocal` (Local Date & Time Format)
+  - `time` (Time Format)
+  - `email` (Email Format)
+  - `url` (URL Format)
+  - `domain` (Domain Format)
   
 - **Additional Parameters:**
   - `space`: Allowing or disallowing spaces in the input.

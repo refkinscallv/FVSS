@@ -8,7 +8,7 @@
     use CG\FVSS\Fvss;
 
     // Load composer autoloader
-    require "path/to/folder/Fvss.php";
+    require "vendor/autoload.php";
 
     /**
      * How To use
@@ -60,7 +60,7 @@
     $validate   = $fvss->validate($req);
 
     // Output of the validation process is a boolean : true or false
-    // If the output is false, then the $validate->message object variable will have the value of the error message
+    // If the output is false, then the `$validate->message` object variable will have the value of the error message
     if($validate->status){
         echo "So far so good";
     } else {
