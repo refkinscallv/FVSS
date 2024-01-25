@@ -59,10 +59,34 @@
                                 $message    = "Invalid" . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not date format";
                             }
                             break;
+                        case "datetime"     : 
+                            if(!preg_match("/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/", $value)){
+                                $status     = false;
+                                $message    = "Invalid" . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Date Time format";
+                            }
+                            break;
+                        case "datetimelocal"     : 
+                            if(!preg_match("/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/", $value)){
+                                $status     = false;
+                                $message    = "Invalid" . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Date Time format";
+                            }
+                            break;
+                        case "time"     : 
+                            if(!preg_match("/^\d{2}:\d{2}:\d{2}$/", $value)){
+                                $status     = false;
+                                $message    = "Invalid" . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Time format";
+                            }
+                            break;
                         case "url"      : 
                             if(!filter_var($value, FILTER_VALIDATE_URL)){
                                 $status     = false;
                                 $message    = "Invalid" . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not URL format";
+                            }
+                            break;
+                        case "domain"      : 
+                            if(!preg_match("/^(www\.)?[a-zA-Z0-9][a-zA-Z0-9-]*\.[a-zA-Z]{2,}$/", $value)){
+                                $status     = false;
+                                $message    = "Invalid" . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Domain format";
                             }
                             break;
                     }
