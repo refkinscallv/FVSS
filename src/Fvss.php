@@ -32,41 +32,35 @@
                         case "alpha"    : 
                             if(!ctype_alpha($value)){
                                 $status     = false;
-                                $message    = "Invalid ". (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. Only letters allowed";
+                                $message    = "Invalid ". (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. Only Letters allowed";
                             }
                             break;
                         case "num"      : 
                             if(!ctype_digit($value)){
                                 $status     = false;
-                                $message    = "Invalid ". (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. Only numbers allowed";
+                                $message    = "Invalid ". (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. Only Numbers allowed";
                             }
                             break;
                         case "alphanum"    : 
                             if(!ctype_alnum($value)){
                                 $status     = false;
-                                $message    = "Invalid ". (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. Only letters and numbers allowed";
+                                $message    = "Invalid ". (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. Only Letters and Numbers allowed";
                             }
                             break;
                         case "email"    : 
                             if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
                                 $status     = false;
-                                $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not email format";
+                                $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Email format";
                             }
                             break;
                         case "date"     : 
                             if(!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/", $value)){
                                 $status     = false;
-                                $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not date format";
+                                $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Date format";
                             }
                             break;
                         case "datetime"     : 
                             if(!preg_match("/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/", $value)){
-                                $status     = false;
-                                $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Date Time format";
-                            }
-                            break;
-                        case "datetimelocal"     : 
-                            if(!preg_match("/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/", $value)){
                                 $status     = false;
                                 $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Date Time format";
                             }
@@ -87,6 +81,12 @@
                             if(!preg_match("/^(www\.)?[a-zA-Z0-9][a-zA-Z0-9-]*\.[a-zA-Z]{2,}$/", $value)){
                                 $status     = false;
                                 $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not Domain format";
+                            }
+                            break;
+                        case "ip"           : 
+                            if(!filter_var($value, FILTER_VALIDATE_IP)){
+                                $status     = false;
+                                $message    = "Invalid " . (isset($val["label"]) ? $val["label"] : ucwords($val["value"])) ." format. not IP format";
                             }
                             break;
                     }
